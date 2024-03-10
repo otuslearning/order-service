@@ -6,6 +6,7 @@ import com.example.orderservice.api.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,11 @@ public class OrderController {
     @ResponseStatus(value = HttpStatus.CREATED)
     public void createOrder(@RequestBody CreateOrderRequestDto dto) {
         orderService.createOrder(dto);
+    }
+
+    @GetMapping("/{orderGuid}")
+    public void createOrder(@PathVariable("orderGuid") String orderGuid) {
+        orderService.getOrderByGuid(orderGuid);
     }
 
     @GetMapping

@@ -5,10 +5,9 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class OrderDto {
+public class OrderPaymentSuccessEvent {
     private String orderGuid;
     private String productGuid;
-    private String status;
-    private Integer quantity;
     private String date;
+    private Integer quantity;
 }

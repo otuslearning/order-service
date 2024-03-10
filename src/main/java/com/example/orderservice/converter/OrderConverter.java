@@ -1,6 +1,7 @@
 package com.example.orderservice.converter;
 
 import com.example.orderservice.api.CreateOrderRequestDto;
+import com.example.orderservice.api.OrderCreateEvent;
 import com.example.orderservice.api.OrderDto;
 import com.example.orderservice.domain.Order;
 import org.springframework.stereotype.Component;
@@ -14,15 +15,28 @@ public class OrderConverter {
         order.setProductGuid(dto.getProductGuid());
         order.setRequestGuid(dto.getRequestGuid());
         order.setQuantity(dto.getQuantity());
+        order.setDate(dto.getDate());
         return order;
+    }
+
+    public OrderCreateEvent convertToEvent(Order order) {
+        return OrderCreateEvent.builder()
+                .accountGuid(order.getAccountGuid())
+                .orderGuid(order.getOrderGuid())
+                .productGuid(order.getProductGuid())
+                .quantity(order.getQuantity())
+                .status(order.getStatus())
+                .date(order.getDate())
+                .build();
     }
 
     public OrderDto convert(Order order) {
         return OrderDto.builder()
-                .orderId(order.getId())
+                .orderGuid(order.getOrderGuid())
                 .productGuid(order.getProductGuid())
                 .quantity(order.getQuantity())
                 .status(order.getStatus())
+                .date(order.getDate())
                 .build();
     }
 
