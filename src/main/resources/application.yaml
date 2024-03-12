@@ -25,10 +25,10 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 kafka:
   topics:
-    payment-not-succeed: ${KAFKA_TOPIC_PRODUCT_NOT_RESERVED:payment-not-succeed}
-    payment-succeed: ${KAFKA_TOPIC_PRODUCT_NOT_RESERVED:payment-succeed}
-    delivery-not-reserved: ${KAFKA_TOPIC_PRODUCT_NOT_RESERVED:delivery-not-reserved}
-    delivery-reserved: ${KAFKA_TOPIC_PRODUCT_NOT_RESERVED:delivery-reserved}
+    payment-not-succeed: ${KAFKA_TOPIC_PAYMENT_NOT_SUCCEED:payment-not-succeed}
+    payment-succeed: ${KAFKA_TOPIC_PAYMENT_SUCCEED:payment-succeed}
+    delivery-not-reserved: ${KAFKA_TOPIC_DELIVERY_NOT_RESERVED:delivery-not-reserved}
+    delivery-reserved: ${KAFKA_TOPIC_DELIVERY_RESERVED:delivery-reserved}
     product-not-reserved: ${KAFKA_TOPIC_PRODUCT_NOT_RESERVED:product-not-reserved}
     product-reserved: ${KAFKA_TOPIC_PRODUCT_NOT_RESERVED:product-reserved}
 server:

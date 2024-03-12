@@ -26,5 +26,6 @@ public class Order {
     @Column(nullable = false, unique = true)
     private String requestGuid;
     private Integer quantity;
+    private Integer price;
     private String date;
 }

@@ -15,6 +15,7 @@ public class OrderConverter {
         order.setProductGuid(dto.getProductGuid());
         order.setRequestGuid(dto.getRequestGuid());
         order.setQuantity(dto.getQuantity());
+        order.setPrice(dto.getPrice());
         order.setDate(dto.getDate());
         return order;
     }
@@ -25,6 +26,7 @@ public class OrderConverter {
                 .orderGuid(order.getOrderGuid())
                 .productGuid(order.getProductGuid())
                 .quantity(order.getQuantity())
+                .price(order.getPrice())
                 .status(order.getStatus())
                 .date(order.getDate())
                 .build();

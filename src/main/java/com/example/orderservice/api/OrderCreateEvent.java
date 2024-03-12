@@ -10,6 +10,7 @@ public class OrderCreateEvent {
     private String orderGuid;
     private String productGuid;
     private Integer quantity;
+    private Integer price;
     private String status;
     private String date;
 }
